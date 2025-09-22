@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços - Mcqueen Motors</title>
+    <link rel="stylesheet" href="../outras-paginas/serviços.css">
+</head>
+<body>
+
+    <section id="servicos" class="servicos">
+        <div class="container">
+            <a href="../home/index.html">
+            <button class="btn-back">
+                Voltar
+            </button>
+            </a>
+            <h2>Nossos Serviços</h2>
+
+
+            <div class="servicos-grid">
+
+                <div class="servico-card">
+                    <div class="servico-icon">🔧</div>
+                    <h3>Revisões e Manutenção</h3>
+                    <p>Mantenha seu veículo sempre em perfeito estado com nossa oficina especializada e peças originais de qualidade superior.</p>
+                    <ul>
+                        <li>Revisões programadas conforme manual</li>
+                        <li>Diagnóstico computadorizado avançado</li>
+                        <li>Peças originais com garantia</li>
+                        <li>Serviço de cortesia e agendamento</li>
+                        <li>Mão de obra especializada</li>
+                        <li>Relatório completo dos serviços</li>
+                    </ul>
+                    <button class="btn-outline" onclick="showAgendamento('revisao')">Agendar Revisão</button>
+                </div>
+
+
+                <div class="servico-card">
+                    <div class="servico-icon">🛡️</div>
+                    <h3>Seguros Automotivos</h3>
+                    <p>Proteja seu investimento com as melhores opções de seguro do mercado, negociadas com condições especiais para nossos clientes.</p>
+                    <ul>
+                        <li>Seguros com desconto exclusivo</li>
+                        <li>Cobertura total contra terceiros</li>
+                        <li>Assistência 24h em todo Brasil</li>
+                        <li>Carro reserva gratuito</li>
+                        <li>Guincho sem limite de quilometragem</li>
+                        <li>Vidros sem franquia</li>
+                    </ul>
+                    <button class="btn-outline" onclick="showCotacao('seguro')">Cotação de Seguro</button>
+                </div>
+
+
+                <div class="servico-card">
+                    <div class="servico-icon">⚙️</div>
+                    <h3>Acessórios e Personalizações</h3>
+                    <p>Personalize seu veículo com acessórios originais e modificações premium que valorizam seu investimento e garantem exclusividade.</p>
+                    <ul>
+                        <li>Acessórios originais de fábrica</li>
+                        <li>Som e multimídia de alta qualidade</li>
+                        <li>Insulfilm 3M e proteções</li>
+                        <li>Customizações especiais</li>
+                        <li>Rodas e pneus premium</li>
+                        <li>Detalhamento automotivo</li>
+                    </ul>
+                    <button class="btn-outline" onclick="showAcessorios()">Ver Acessórios</button>
+                </div>
+            </div>
+
+
+            <div class="servicos-cta">
+                <h3>Precisa de Ajuda?</h3>
+                <p>Nossa equipe especializada está pronta para atender você com excelência. Entre em contato e descubra como podemos cuidar do seu veículo com o carinho que ele merece.</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary" onclick="showContato()">
+                        Falar com Especialista
+                    </button>
+                    <button class="btn-secondary" onclick="showAgendamento('geral')">
+                        Agendar Visita
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

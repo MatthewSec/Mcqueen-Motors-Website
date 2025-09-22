@@ -1,0 +1,350 @@
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Botão de voltar */
+.btn-back {
+    background-color: #dc2626;
+    color: #fff;
+    padding: 12px 24px;
+    border: 1px solid #dc2626;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-back:hover {
+    background-color: #dc2626;
+    color: #fff;
+    border-color: #b91c1c;
+    transform: translateX(-3px);
+}
+
+/* Botão outline */
+.btn-outline {
+    background: transparent;
+    color: #dc2626;
+    padding: 12px 24px;
+    border: 2px solid #dc2626;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-outline:hover {
+    background-color: #dc2626;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+}
+
+.btn-outline:active {
+    transform: translateY(0);
+}
+
+/* Serviços Section */
+.servicos {
+    padding: 80px 0 100px;
+    min-height: 100vh;
+    position: relative;
+    background: #fff;
+}
+
+.servicos h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: #000;
+    text-shadow: none;
+    position: relative;
+}
+
+.servicos h2::after {
+    content: '';
+    width: 100px;
+    height: 4px;
+    background: #dc2626;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.servico-card {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.servico-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+
+.servico-icon {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    color: #dc2626;
+    filter: drop-shadow(2px 2px 4px rgba(220, 38, 38, 0.15));
+}
+
+.servico-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1f2937;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.servico-card p {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.servico-card ul {
+    list-style: none;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.servico-card li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e5e7eb;
+    color: #374151;
+    font-weight: 500;
+    position: relative;
+    padding-left: 2rem;
+    transition: all 0.3s ease;
+}
+
+.servico-card li:last-child {
+    border-bottom: none;
+}
+
+.servico-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
+    color: #dc2626;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.servico-card li:hover {
+    background-color: #f9fafb;
+    margin: 0 -1rem;
+    padding-left: 3rem;
+    padding-right: 1rem;
+    border-radius: 8px;
+}
+
+
+.servicos-cta {
+    background: #f9fafb;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    margin-top: 3rem;
+}
+
+.servicos-cta h3 {
+    color: #dc2626;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.servicos-cta p {
+    color: #222;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: #dc2626;
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.15);
+}
+
+.btn-primary:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.22);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #dc2626;
+    padding: 14px 28px;
+    border: 2px solid #dc2626;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-secondary:hover {
+    background: #dc2626;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+
+@media (max-width: 968px) {
+    .servicos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .servicos h2 {
+        font-size: 2.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .servicos {
+        padding: 60px 0;
+    }
+
+    .servicos h2 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .servico-card {
+        padding: 2rem;
+    }
+
+    .servico-icon {
+        font-size: 3rem;
+    }
+
+    .servicos-cta {
+        padding: 2rem;
+    }
+
+    .servicos-cta h3 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .servicos-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .servico-card {
+        padding: 1.5rem;
+    }
+
+    .servicos h2 {
+        font-size: 1.8rem;
+    }
+
+    .servico-icon {
+        font-size: 2.5rem;
+    }
+
+    .servico-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .btn-outline {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+}

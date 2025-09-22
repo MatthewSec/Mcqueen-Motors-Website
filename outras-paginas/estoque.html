@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque - Mcqueen Motors</title>
+    <link rel="stylesheet" href="../outras-paginas/estoque.css">
+</head>
+<body>
+
+    <a href="../home/index.html" class="btn-back-to-home">Voltar para página principal</a>
+
+    <section id="estoque" class="estoque">
+        <div class="container">
+            <h2>Nosso Estoque</h2>
+
+
+            <div class="filtros">
+                <select class="filter-select" id="filtro-marca">
+                    <option value="">Todas as marcas</option>
+                    <option value="bmw">BMW</option>
+                    <option value="porsche">Porsche</option>
+                    <option value="mercedes">Mercedes-Benz</option>
+                    <option value="range-rover">Range Rover</option>
+                </select>
+                <select class="filter-select" id="filtro-preco">
+                    <option value="">Faixa de preço</option>
+                    <option value="0-200000">Até R$ 200.000</option>
+                    <option value="200000-500000">R$ 200.000 - R$ 500.000</option>
+                    <option value="500000+">Acima de R$ 500.000</option>
+                </select>
+            </div>
+
+
+            <div class="veiculos-grid" id="veiculos-grid">
+
+                <div class="veiculo-card" data-marca="bmw" data-preco="485000" onclick="showVehicleDetails('bmw-x6-2023')">
+                    <div class="veiculo-image"><img src="../imagens/Urus.png" alt="Lamborghini Urus"></div>
+                    <div class="veiculo-info">
+                        <h3>Lamborghini Urus 2023</h3>
+                        <div class="veiculo-specs">
+                            Motor 4.0 V8 • Automático • 15.000 km
+                        </div>
+                        <div class="veiculo-preco">R$ 485.000</div>
+                        <div class="veiculo-actions">
+                            <button class="btn-primary" onclick="event.stopPropagation(); showSimulador('485000')">Simular</button>
+                            <button class="btn-secondary" onclick="event.stopPropagation(); showReservaForm()">Reservar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="veiculo-card" data-marca="porsche" data-preco="750000" onclick="showVehicleDetails('porsche-911-2023')">
+                    <div class="veiculo-image"><img src="../imagens/preto911.png" alt=""></div>
+                    <div class="veiculo-info">
+                        <h3>Porsche 911 Carrera 2023</h3>
+                        <div class="veiculo-specs">
+                            Motor 3.0 Biturbo • Automático • 8.500 km
+                        </div>
+                        <div class="veiculo-preco">R$ 750.000</div>
+                        <div class="veiculo-actions">
+                            <button class="btn-primary" onclick="event.stopPropagation(); showSimulador('750000')">Simular</button>
+                            <button class="btn-secondary" onclick="event.stopPropagation(); showReservaForm()">Reservar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="veiculo-card" data-marca="mercedes" data-preco="320000" onclick="showVehicleDetails('mercedes-c63-2022')">
+                    <div class="veiculo-image"><img src="../imagens/mercedes.png" alt=""></div>
+                    <div class="veiculo-info">
+                        <h3>Mercedes-AMG C63 2022</h3>
+                        <div class="veiculo-specs">
+                            Motor 4.0 V8 Biturbo • Automático • 22.000 km
+                        </div>
+                        <div class="veiculo-preco">R$ 320.000</div>
+                        <div class="veiculo-actions">
+                            <button class="btn-primary" onclick="event.stopPropagation(); showSimulador('320000')">Simular</button>
+                            <button class="btn-secondary" onclick="event.stopPropagation(); showReservaForm()">Reservar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="veiculo-detalhes" class="veiculo-detalhes hidden">
+        <div class="container">
+            <button class="btn-back" onclick="showSection('estoque')">← Voltar ao Estoque</button>
+
+            <div class="veiculo-content">
+                
+                <div class="galeria">
+                    <div class="main-image" id="main-image">🚗</div>
+                    <div class="thumbnail-gallery">
+                        <div class="thumbnail active" onclick="changeMainImage('🚗')">🚗</div>
+                        <div class="thumbnail" onclick="changeMainImage('🚙')">🚙</div>
+                        <div class="thumbnail" onclick="changeMainImage">🏎️</div>
+                    </div>
+                </div>
+
+    </section>
+</body>
+</html>

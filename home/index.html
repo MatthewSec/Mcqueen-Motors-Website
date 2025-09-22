@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mcqueen Motors - Sua Nova Experiência Automotiva</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+                        <div class="nav-brand">
+                <a href="index.html" class="nav-brand-link">
+                    <img src="/imagens/logo.png" alt="Logo" class="header-top-logo">
+                    <h1>Mcqueen <span class="highlight">Motors</span></h1>
+                </a>
+        </div>
+
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="../outras-paginas/estoque.html" class="nav-link">Estoque</a></li>
+                    <li><a href="../outras-paginas/financiamento.html" class="nav-link">Simular Financiamento</a></li>
+                    <li><a href="/outras-paginas/serviços.html" class="nav-link">Serviços</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+                <button class="cta-btn">Agendar Test Drive</button>
+                <div class="login">
+
+        <div class="login-dropdown">
+            <span class="login-icon" tabindex="0"><img src="../imagens/canvas.png" alt=""></span>
+            <div class="login-menu">
+                <a href="../outras-paginas/login.html" class="login-link">Entrar</a>
+                <a href="../outras-paginas/login.html" class="cadastro-link">Cadastrar</a>
+            </div>
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 class="merchan">Acelere seus sonhos com a <span class="highlight">Mcqueen Motors</span></h2>
+                    <p>Descubra nossa coleção exclusiva de veículos premium com financiamento facilitado e atendimento personalizado.</p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary" onclick="showSection('estoque')">Ver Estoque</button>
+                        <button class="btn-secondary">Simular Financiamento</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="car-placeholder">
+                        <img src="../imagens/vermelho911.png" alt="ferrari-911" class="car-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="destaques">
+            <div class="container">
+                <h2>Destaques do Mês</h2>
+<div class="destaques-grid">
+    <div class="destaque-card">
+        <div class="car-image">
+            <img src="../imagens/Bmw.png" alt="BMW X6" class="destaque-img">
+        </div>
+        <h3>BMW X6 2023</h3>
+        <p class="car-details">3.0 Turbo • Automático • 15.000 km</p>
+        <div class="price">R$ 485.000</div>
+        <button class="btn-outline" onclick="showVehicleDetail('bmw-x6')">Ver Detalhes</button>
+    </div>
+    <div class="destaque-card">
+        <div class="car-image">
+            <img src="../imagens/porche-911.png" alt="Porsche 911" class="destaque-img">
+        </div>
+        <h3>Porsche 911 2022</h3>
+        <p class="car-details">3.8 Turbo • Manual • 8.500 km</p>
+        <div class="price">R$ 720.000</div>
+        <button class="btn-outline" onclick="showVehicleDetail('porsche-911')">Ver Detalhes</button>
+    </div>
+    <div class="destaque-card">
+        <div class="car-image">
+            <img src="../imagens/ranger-over.png" alt="Range Rover" class="destaque-img">
+        </div>
+        <h3>Range Rover 2023</h3>
+        <p class="car-details">5.0 V8 • Automático • 12.000 km</p>
+        <div class="price">R$ 650.000</div>
+        <button class="btn-outline" onclick="showVehicleDetail('range-rover')">Ver Detalhes</button>
+    </div>
+</div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="como-funciona">
+            <div class="container">
+                <h2>Como Funciona</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Escolha seu Veículo</h3>
+                        <p>Navegue pelo nosso estoque premium e encontre o carro dos seus sonhos</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Simule o Financiamento</h3>
+                        <p>Use nossa calculadora para ver as melhores condições de pagamento</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Agende seu Test Drive</h3>
+                        <p>Venha conhecer pessoalmente e dirigir o veículo escolhido</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Finalize a Compra</h3>
+                        <p>Complete a documentação com nosso suporte especializado</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="depoimentos">
+            <div class="container">
+                <h2>O que nossos clientes dizem</h2>
+                <div class="depoimentos-grid">
+                    <div class="depoimento">
+                        <p>"Experiência incrível! Encontrei o carro perfeito com condições de pagamento que cabem no meu orçamento."</p>
+                        <div class="cliente">- Maria Silva, BMW X3</div>
+                    </div>
+                    <div class="depoimento">
+                        <p>"Atendimento excepcional e transparência total no processo. Recomendo a Mcqueen Motors!"</p>
+                        <div class="cliente">- João Santos, Porsche Cayenne</div>
+                    </div>
+                    <div class="depoimento">
+                        <p>"O simulador de financiamento me ajudou muito a planejar a compra. Equipe muito profissional."</p>
+                        <div class="cliente">- Ana Costa, Mercedes-Benz GLE</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="parcerias">
+            <div class="container">
+                <h2>Nossos Parceiros</h2>
+                <div class="parceiros-grid">
+                    <div class="parceiro">Bmw</div>
+                    <div class="parceiro">Ferrari</div>
+                    <div class="parceiro">Porche</div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section id="estoque" class="estoque hidden">
+            <div class="container">
+                <h2>Nosso Estoque</h2>
+                <div class="filtros">
+                    <select class="filter-select">
+                        <option>Todas as marcas</option>
+                        <option>BMW</option>
+                        <option>Porsche</option>
+                        <option>Mercedes-Benz</option>
+                        <option>Range Rover</option>
+                    </select>
+                    <select class="filter-select">
+                        <option>Faixa de preço</option>
+                        <option>Até R$ 200.000</option>
+                        <option>R$ 200.000 - R$ 500.000</option>
+                        <option>Acima de R$ 500.000</option>
+                    </select>
+                </div>
+                <div class="veiculos-grid" id="veiculos-grid">
+
+                </div>
+            </div>
+        </section>
+
+
+        <section id="veiculo-detalhes" class="veiculo-detalhes hidden">
+            <div class="container">
+                <button class="btn-back" onclick="showSection('estoque')">← Voltar ao Estoque</button>
+                <div class="veiculo-content">
+                    <div class="galeria">
+                        <div class="main-image" id="main-image">🚗</div>
+                        <div class="thumbnail-gallery">
+                            <div class="thumbnail active">🚗</div>
+                            <div class="thumbnail">🚙</div>
+                            <div class="thumbnail">🏎️</div>
+                        </div>
+                    </div>
+                    <div class="veiculo-info">
+                        <h2 id="veiculo-titulo">BMW X6 2023</h2>
+                        <div class="especificacoes">
+                            <div class="spec">
+                                <strong>Motor:</strong>
+                                <span id="spec-motor">3.0 Turbo</span>
+                            </div>
+                            <div class="spec">
+                                <strong>Câmbio:</strong>
+                                <span id="spec-cambio">Automático</span>
+                            </div>
+                            <div class="spec">
+                                <strong>Cor:</strong>
+                                <span id="spec-cor">Preto</span>
+                            </div>
+                            <div class="spec">
+                                <strong>Quilometragem:</strong>
+                                <span id="spec-km">15.000 km</span>
+                            </div>
+                        </div>
+                        <div class="preco-veiculo">
+                            <span class="preco-label">Preço:</span>
+                            <span class="preco-valor" id="preco-veiculo">R$ 485.000</span>
+                        </div>
+                        <div class="veiculo-actions">
+                            <button class="btn-primary" onclick="showSimulador('485000')">Simular Financiamento</button>
+                            <button class="btn-secondary" onclick="showReservaForm()">Reservar Veículo</button>
+                        </div>
+                    </div>
+                </div>
+
+
+    </main>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Mcqueen <span class="highlight">Motors</span></h3>
+                    <p>Sua experiência automotiva premium com atendimento personalizado e as melhores condições do mercado.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>📞 (11) 3000-0000</p>
+                    <p>📱 (11) 99999-9999</p>
+                    <p>📧 contato@mcqueenmotors.com</p>
+                    <p>📍 Av. Paulista, 1000 - SP</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Horário de Funcionamento</h4>
+                    <p>Segunda a Sexta: 8h às 18h</p>
+                    <p>Sábados: 8h às 16h</p>
+                    <p>Domingos: Fechado</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Financiamento</a></li>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mcqueen Motors. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</html>
