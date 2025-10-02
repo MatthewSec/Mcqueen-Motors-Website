@@ -1,0 +1,213 @@
+        :root {
+            --primary: #dc2626;
+            --primary-dark: #b91c1c;
+            --neutral-bg: #fff;
+            --neutral-card: #f9f9f9;
+            --neutral-border: #e5e7eb;
+            --neutral-text: #1f1f1f;
+            --highlight: #dc2626;
+            --radius: 14px;
+            --shadow: 0 4px 24px rgba(0,0,0,0.08);
+            --header-bg: #000;
+            --header-text: #fff;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: var(--neutral-bg);
+            color: var(--neutral-text);
+            margin: 0;
+            min-height: 100vh;
+        }
+        .header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 0;
+        }
+        .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 700px;
+            margin: 0 auto;
+            min-height: 90px;
+            position: relative;
+        }
+        .nav-brand {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .header-top-logo {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: transparent;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            margin-bottom: 8px;
+        }
+        .nav-brand h1 {
+            color: #fff;
+            margin: 0 0 0 12px;
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+        .highlight {
+            color: var(--highlight);
+        }
+        .back-btn {
+            position: absolute;
+            left: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #222;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: background 0.2s;
+        }
+        .back-btn:hover {
+            background: #444;
+        }
+        main {
+            max-width: 900px;
+            margin: 40px auto 0 auto;
+            padding: 24px;
+        }
+        .page-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .page-desc {
+            text-align: center;
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 36px;
+        }
+
+        .car-card {
+            background: var(--neutral-card);
+            border: 2px solid var(--neutral-border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            width: 220px;
+            padding: 18px 16px 14px 16px;
+            text-align: center;
+            transition: border 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            position: relative;
+        }
+        .car-card.selected, .car-card:hover {
+            border: 2.5px solid var(--primary);
+            box-shadow: 0 6px 24px rgba(220,38,38,0.10);
+        }
+        .car-card img {
+            width: 100%;
+            height: 110px;
+            object-fit: contain;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            background: #f3f4f6;
+        }
+        .car-card .car-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 2px;
+        }
+        .car-card .car-info {
+            color: #666;
+            font-size: 0.97rem;
+            margin-bottom: 0;
+        }
+        .form-section {
+            background: var(--neutral-card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 32px 28px 24px 28px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+        form input, form select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid var(--neutral-border);
+            margin-bottom: 18px;
+            font-size: 1rem;
+            background: #fafafa;
+            color: var(--neutral-text);
+            transition: border 0.2s;
+        }
+        form input:focus, form select:focus {
+            border: 1.5px solid var(--primary);
+            outline: none;
+        }
+        .contact-pref {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+        .contact-pref label {
+            font-weight: 400;
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 12px 0;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 10px;
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+        .success-message {
+            background: #e6f9ec;
+            color: #15803d;
+            border: 1.5px solid #22c55e;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 18px;
+            display: none;
+        }
+        @media (max-width: 1000px) {
+            main { padding: 10px; }
+            .car-list-cards { gap: 14px; }
+        }
+        @media (max-width: 600px) {
+            .form-section { padding: 18px 8px 14px 8px; }
+            .car-card { width: 98vw; max-width: 320px; }
+            .header-flex { min-height: 70px; }
+            .header-top-logo { width: 40px; height: 40px; }
+            .nav-brand h1 { font-size: 1.2rem; }
+            .page-title { font-size: 1.3rem; }
+        }
