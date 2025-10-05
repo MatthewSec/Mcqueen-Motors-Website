@@ -6,155 +6,94 @@
     <title>Simular Financiamento - Mcqueen Motors</title>
     <link rel="stylesheet" href="../outras-paginas/financiamento.css">
     <link rel="icon" href="../imagens/logo.png" sizes="32x32">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
 
-    <section id="simulador" class="simulador">
+    <main>
+        <section id="simulador" class="simulador">
+            <div class="container">
+                 <button class="btn-back" onclick="history.back()">Voltar</button>
+
+                <h2>Simulador de Financiamento</h2>
+
+                <div class="simulador-content">
+
+                    <div class="simulador-form">
+                        <div class="form-group">
+                            <label for="preco-veiculo-sim">Preço do Veículo (R$)</label>
+                            <input type="number" id="preco-veiculo-sim" value="485000" min="10000" max="5000000" step="1000" oninput="calcularFinanciamento()">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="entrada">Entrada (R$)</label>
+                            <input type="number" id="entrada" value="100000" min="0" step="1000" oninput="calcularFinanciamento()">
+                            <small>Percentual da entrada: <span id="percentual-entrada">20.6%</span></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="parcelas">Número de Parcelas</label>
+                            <select id="parcelas" onchange="calcularFinanciamento()">
+                                <option value="12">12 meses (1 ano)</option>
+                                <option value="24">24 meses (2 anos)</option>
+                                <option value="36" selected>36 meses (3 anos)</option>
+                                <option value="48">48 meses (4 anos)</option>
+                                <option value="60">60 meses (5 anos)</option>
+                                <option value="72">72 meses (6 anos)</option>
+                                <option value="84">84 meses (7 anos)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="taxa">Taxa de Juros Anual (%)</label>
+                            <input type="number" id="taxa" value="12.5" min="0" max="50" step="0.1" oninput="calcularFinanciamento()">
+                            <small>Taxa mensal: <span id="taxa-mensal">1.04%</span></small>
+                        </div>
+
+                        <button class="btn-primary" onclick="calcularFinanciamento()">Calcular Financiamento</button>
+                    </div>
+
+                    <div class="resultado-simulacao" id="resultado-simulacao">
+                        <h3>Resultado da Simulação</h3>
+
+                        <div class="resultado-item"><strong>Valor do Veículo:</strong> <span id="valor-veiculo-display">R$ 485.000</span></div>
+                        <div class="resultado-item"><strong>Entrada:</strong> <span id="entrada-display">R$ 100.000</span></div>
+                        <div class="resultado-item"><strong>Valor Financiado:</strong> <span id="valor-financiado">R$ 385.000</span></div>
+                        <div class="resultado-item"><strong>Valor da Parcela:</strong> <span id="valor-parcela">R$ 12.850</span></div>
+                        <div class="resultado-item"><strong>Total de Juros:</strong> <span id="total-juros">R$ 77.600</span></div>
+                        <div class="resultado-item"><strong>Total a Pagar:</strong> <span id="total-pagar">R$ 562.600</span></div>
+
+                        <div class="grafico-container">
+                            <h4>Composição do Financiamento</h4>
+                            <canvas id="grafico-financiamento" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detalhes-financiamento">
+                    <h3>Detalhes do Financiamento</h3>
+                    <div class="detalhes-grid">
+                        <div class="detalhe-card"><h5>CET (Custo Efetivo Total)</h5><div class="valor" id="cet">15.2% a.a.</div></div>
+                        <div class="detalhe-card"><h5>IOF Estimado</h5><div class="valor" id="iof">R$ 2.310</div></div>
+                        <div class="detalhe-card"><h5>Primeira Parcela</h5><div class="valor" id="primeira-parcela">30 dias</div></div>
+                        <div class="detalhe-card"><h5>Taxa Mensal</h5><div class="valor" id="taxa-mensal-display">1.04%</div></div>
+                    </div>
+
+                    <div class="alert alert-warning" style="margin-top: 1.5rem;">
+                        <strong>Importante:</strong> Esta simulação é apenas uma estimativa. Os valores finais podem variar conforme análise de crédito e condições do banco.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
         <div class="container">
-            <a href="../home/index.html">
-            <button class="btn-back">
-                 Voltar
-            </button>
-            </a>
-            <h2>Simulador de Financiamento</h2>
-
-            <div class="simulador-content">
-
-                <div class="simulador-form">
-                    <div class="form-group">
-                        <label for="preco-veiculo-sim">Preço do Veículo (R$)</label>
-                        <input
-                            type="number"
-                            id="preco-veiculo-sim"
-                            value="485000"
-                            min="10000"
-                            max="5000000"
-                            step="1000"
-                            oninput="formatCurrency(this); calcularFinanciamento()"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="entrada">Entrada (R$)</label>
-                        <input
-                            type="number"
-                            id="entrada"
-                            value="100000"
-                            min="0"
-                            step="1000"
-                            oninput="formatCurrency(this); calcularFinanciamento()"
-                        >
-                        <small style="color: #6b7280; font-size: 12px; display: block; margin-top: 4px;">
-                            Percentual da entrada: <span id="percentual-entrada">20.6%</span>
-                        </small>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="parcelas">Número de Parcelas</label>
-                        <select id="parcelas" onchange="calcularFinanciamento()">
-                            <option value="12">12 meses (1 ano)</option>
-                            <option value="24">24 meses (2 anos)</option>
-                            <option value="36" selected>36 meses (3 anos)</option>
-                            <option value="48">48 meses (4 anos)</option>
-                            <option value="60">60 meses (5 anos)</option>
-                            <option value="72">72 meses (6 anos)</option>
-                            <option value="84">84 meses (7 anos)</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="taxa">Taxa de Juros Anual (%)</label>
-                        <input
-                            type="number"
-                            id="taxa"
-                            value="12.5"
-                            min="0"
-                            max="50"
-                            step="0.1"
-                            oninput="calcularFinanciamento()"
-                        >
-                        <small style="color: #6b7280; font-size: 12px; display: block; margin-top: 4px;">
-                            Taxa mensal: <span id="taxa-mensal">1.04%</span>
-                        </small>
-                    </div>
-
-                    <button class="btn-primary" onclick="calcularFinanciamento()">
-                        Calcular Financiamento
-                    </button>
-                </div>
-
-
-                <div class="resultado-simulacao" id="resultado-simulacao">
-                    <h3>Resultado da Simulação</h3>
-
-                    <div class="alert alert-info" id="alert-info" style="display: none;">
-                        <strong>Dica:</strong> Aumentar a entrada reduz o valor das parcelas e o total de juros pagos.
-                    </div>
-
-                    <div class="resultado-item">
-                        <strong>Valor do Veículo:</strong>
-                        <span id="valor-veiculo-display">R$ 485.000</span>
-                    </div>
-
-                    <div class="resultado-item">
-                        <strong>Entrada:</strong>
-                        <span id="entrada-display">R$ 100.000</span>
-                    </div>
-
-                    <div class="resultado-item">
-                        <strong>Valor Financiado:</strong>
-                        <span id="valor-financiado">R$ 385.000</span>
-                    </div>
-
-                    <div class="resultado-item">
-                        <strong>Valor da Parcela:</strong>
-                        <span id="valor-parcela">R$ 12.850</span>
-                    </div>
-
-                    <div class="resultado-item">
-                        <strong>Total de Juros:</strong>
-                        <span id="total-juros">R$ 77.600</span>
-                    </div>
-
-                    <div class="resultado-item">
-                        <strong>Total a Pagar:</strong>
-                        <span id="total-pagar">R$ 562.600</span>
-                    </div>
-
-                    <div class="grafico-container">
-                        <h4>Composição do Financiamento</h4>
-                        <canvas id="grafico-financiamento" width="400" height="200"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            
-            <div class="detalhes-financiamento">
-                <h3 style="text-align: center; margin-bottom: 1rem; color: #1f2937;">Detalhes do Financiamento</h3>
-
-                <div class="detalhes-grid">
-                    <div class="detalhe-card">
-                        <h5>CET (Custo Efetivo Total)</h5>
-                        <div class="valor" id="cet">15.2% a.a.</div>
-                    </div>
-                    <div class="detalhe-card">
-                        <h5>IOF Estimado</h5>
-                        <div class="valor" id="iof">R$ 2.310</div>
-                    </div>
-                    <div class="detalhe-card">
-                        <h5>Primeira Parcela</h5>
-                        <div class="valor" id="primeira-parcela">30 dias</div>
-                    </div>
-                    <div class="detalhe-card">
-                        <h5>Taxa Mensal</h5>
-                        <div class="valor" id="taxa-mensal-display">1.04%</div>
-                    </div>
-                </div>
-
-                <div class="alert alert-warning" style="margin-top: 1.5rem;">
-                    <strong>Importante:</strong> Esta simulação é apenas uma estimativa. Os valores finais podem variar conforme análise de crédito e condições do banco financiador.
-                </div>
-            </div>
+            <p>&copy; 2025 Mcqueen Motors. Todos os direitos reservados.</p>
         </div>
-    </section>
+    </footer>
+
+    <script src="../js/financiamento.js"></script>
+</body>
 </html>

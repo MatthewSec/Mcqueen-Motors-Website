@@ -8,16 +8,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="../imagens/logo.png" sizes="32x32">
 </head>
+
 <body>
 
     <header class="header">
         <div class="container">
-                        <div class="nav-brand">
+            <div class="nav-brand">
                 <a href="index.html" class="nav-brand-link">
-                    <img src="/imagens/logo.png" alt="Logo" class="header-top-logo">
+                    <img src="../imagens/logo.png" alt="Logo" class="header-top-logo">
                     <h1>Mcqueen <span class="highlight">Motors</span></h1>
                 </a>
-        </div>
+            </div>
 
             <nav class="nav">
                 <ul class="nav-menu">
@@ -26,17 +27,21 @@
                     <li><a href="../outras-paginas/serviços.html" class="nav-link">Serviços</a></li>
                     <li><a href="../outras-paginas/seguro.html" class="nav-link">Seguro</a></li>
                 </ul>
-                <a href="../outras-paginas/testdrive.html"><button class="cta-btn">Agendar Test Drive</button> </a>
+                <a href="../outras-paginas/testdrive.html"><button class="cta-btn">Agendar Test Drive</button></a>
 
-            <div class="login">
-            <div class="login-dropdown">
-            <span class="login-icon" tabindex="0"><img src="../imagens/canvas.png" alt="usuario"></span>
-            <div class="login-menu">
-                <a href="../outras-paginas/login.html" class="login-link">Entrar</a>
-                <a href="../outras-paginas/cadastro.html" class="cadastro-link">Cadastrar</a>
-            </div>
+                <div class="login">
+                    <div class="login-dropdown">
+                        <span class="login-icon" tabindex="0">
+                            <img src="../imagens/canvas.png" alt="usuario">
+                        </span>
+                        <div class="login-menu">
+                            <a href="../outras-paginas/login.html" class="login-link">Entrar</a>
+                            <a href="../outras-paginas/cadastro.html" class="cadastro-link">Cadastrar</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </div>
-
     </header>
 
 
@@ -48,14 +53,16 @@
                     <h2 class="merchan">Acelere seus sonhos com a <span class="highlight">Mcqueen Motors</span></h2>
                     <p>Descubra nossa coleção exclusiva de veículos premium com financiamento facilitado e atendimento personalizado.</p>
                     <div class="hero-buttons">
-                        <button class="btn-primary" onclick="showSection('estoque')">Ver Estoque</button>
-                        <button class="btn-secondary">Simular Financiamento</button>
+                        <a href="../outras-paginas/estoque.html">
+                            <button class="btn-primary">Ver Estoque</button>
+                        </a>
+                        <a href="../outras-paginas/financiamento.html">
+                            <button class="btn-secondary">Simular Financiamento</button>
+                        </a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="car-placeholder">
-                        <img src="../imagens/vermelho911.png" alt="ferrari-911" class="car-img">
-                    </div>
+                    <img src="../imagens/vermelho911.png" alt="carro esportivo" class="car-img">
                 </div>
             </div>
         </section>
@@ -64,35 +71,7 @@
         <section class="destaques">
             <div class="container">
                 <h2>Destaques do Mês</h2>
-<div class="destaques-grid">
-    <div class="destaque-card">
-        <div class="car-image">
-            <img src="../imagens/Bmw.png" alt="BMW X6" class="destaque-img">
-        </div>
-        <h3>BMW X6 2023</h3>
-        <p class="car-details">3.0 Turbo • Automático • 15.000 km</p>
-        <div class="price">R$ 485.000</div>
-        <button class="btn-outline" onclick="showVehicleDetail('bmw-x6')">Ver Detalhes</button>
-    </div>
-    <div class="destaque-card">
-        <div class="car-image">
-            <img src="../imagens/porche-911.png" alt="Porsche 911" class="destaque-img">
-        </div>
-        <h3>Porsche 911 2022</h3>
-        <p class="car-details">3.8 Turbo • Manual • 8.500 km</p>
-        <div class="price">R$ 720.000</div>
-        <button class="btn-outline" onclick="showVehicleDetail('porsche-911')">Ver Detalhes</button>
-    </div>
-    <div class="destaque-card">
-        <div class="car-image">
-            <img src="../imagens/ranger-over.png" alt="Range Rover" class="destaque-img">
-        </div>
-        <h3>Range Rover 2023</h3>
-        <p class="car-details">5.0 V8 • Automático • 12.000 km</p>
-        <div class="price">R$ 650.000</div>
-        <button class="btn-outline" onclick="showVehicleDetail('range-rover')">Ver Detalhes</button>
-    </div>
-</div>
+                <div class="destaques-grid">
                 </div>
             </div>
         </section>
@@ -102,26 +81,10 @@
             <div class="container">
                 <h2>Como Funciona</h2>
                 <div class="steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <h3>Escolha seu Veículo</h3>
-                        <p>Navegue pelo nosso estoque premium e encontre o carro dos seus sonhos</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <h3>Simule o Financiamento</h3>
-                        <p>Use nossa calculadora para ver as melhores condições de pagamento</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <h3>Agende seu Test Drive</h3>
-                        <p>Venha conhecer pessoalmente e dirigir o veículo escolhido</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <h3>Finalize a Compra</h3>
-                        <p>Complete a documentação com nosso suporte especializado</p>
-                    </div>
+                    <div class="step"><div class="step-number">1</div><h3>Escolha seu Veículo</h3></div>
+                    <div class="step"><div class="step-number">2</div><h3>Simule o Financiamento</h3></div>
+                    <div class="step"><div class="step-number">3</div><h3>Agende seu Test Drive</h3></div>
+                    <div class="step"><div class="step-number">4</div><h3>Finalize a Compra</h3></div>
                 </div>
             </div>
         </section>
@@ -139,10 +102,6 @@
                         <p>"Atendimento excepcional e transparência total no processo. Recomendo a Mcqueen Motors!"</p>
                         <div class="cliente">- João Santos, Porsche Cayenne</div>
                     </div>
-                    <div class="depoimento">
-                        <p>"O simulador de financiamento me ajudou muito a planejar a compra. Equipe muito profissional."</p>
-                        <div class="cliente">- Ana Costa, Mercedes-Benz GLE</div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -155,81 +114,9 @@
                     <div class="parceiro">BMW</div>
                     <div class="parceiro">Ferrari</div>
                     <div class="parceiro">Porsche</div>
-
                 </div>
             </div>
         </section>
-
-
-        <section id="estoque" class="estoque hidden">
-            <div class="container">
-                <h2>Nosso Estoque</h2>
-                <div class="filtros">
-                    <select class="filter-select">
-                        <option>Todas as marcas</option>
-                        <option>BMW</option>
-                        <option>Porsche</option>
-                        <option>Mercedes-Benz</option>
-                        <option>Range Rover</option>
-                    </select>
-                    <select class="filter-select">
-                        <option>Faixa de preço</option>
-                        <option>Até R$ 200.000</option>
-                        <option>R$ 200.000 - R$ 500.000</option>
-                        <option>Acima de R$ 500.000</option>
-                    </select>
-                </div>
-                <div class="veiculos-grid" id="veiculos-grid">
-
-                </div>
-            </div>
-        </section>
-
-
-        <section id="veiculo-detalhes" class="veiculo-detalhes hidden">
-            <div class="container">
-                <button class="btn-back" onclick="showSection('estoque')">← Voltar ao Estoque</button>
-                <div class="veiculo-content">
-                    <div class="galeria">
-                        <div class="main-image" id="main-image">🚗</div>
-                        <div class="thumbnail-gallery">
-                            <div class="thumbnail active">🚗</div>
-                            <div class="thumbnail">🚙</div>
-                            <div class="thumbnail">🏎️</div>
-                        </div>
-                    </div>
-                    <div class="veiculo-info">
-                        <h2 id="veiculo-titulo">BMW X6 2023</h2>
-                        <div class="especificacoes">
-                            <div class="spec">
-                                <strong>Motor:</strong>
-                                <span id="spec-motor">3.0 Turbo</span>
-                            </div>
-                            <div class="spec">
-                                <strong>Câmbio:</strong>
-                                <span id="spec-cambio">Automático</span>
-                            </div>
-                            <div class="spec">
-                                <strong>Cor:</strong>
-                                <span id="spec-cor">Preto</span>
-                            </div>
-                            <div class="spec">
-                                <strong>Quilometragem:</strong>
-                                <span id="spec-km">15.000 km</span>
-                            </div>
-                        </div>
-                        <div class="preco-veiculo">
-                            <span class="preco-label">Preço:</span>
-                            <span class="preco-valor" id="preco-veiculo">R$ 485.000</span>
-                        </div>
-                        <div class="veiculo-actions">
-                            <button class="btn-primary" onclick="showSimulador('485000')">Simular Financiamento</button>
-                            <button class="btn-secondary" onclick="showReservaForm()">Reservar Veículo</button>
-                        </div>
-                    </div>
-                </div>
-
-
     </main>
 
 
@@ -261,8 +148,7 @@
                     <ul>
                         <li><a href="#">Política de Privacidade</a></li>
                         <li><a href="#">Termos de Uso</a></li>
-                        <li><a href="#">Financiamento</a></li>
-                        <li><a href="#">Trabalhe Conosco</a></li>
+                        <li><a href="../outras-paginas/financiamento.html">Financiamento</a></li>
                     </ul>
                 </div>
             </div>
@@ -273,4 +159,7 @@
         </div>
     </footer>
 
+    <script src="../js/home.js"></script>
+
+</body>
 </html>

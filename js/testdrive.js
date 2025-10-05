@@ -118,10 +118,45 @@
 
             if(!valid) return;
 
-            
+
             successMsg.style.display = 'block';
             form.reset();
             setTimeout(() => {
                 successMsg.style.display = 'none';
             }, 5000);
+        });
+        
+        // Script JS integrado e offline
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("form-testdrive");
+            const msgSucesso = document.getElementById("mensagem-sucesso");
+            const dataInput = document.getElementById("data");
+            const telInput = document.getElementById("telefone");
+
+            // Impede datas passadas
+            const hoje = new Date();
+            const yyyy = hoje.getFullYear();
+            const mm = String(hoje.getMonth() + 1).padStart(2, "0");
+            const dd = String(hoje.getDate()).padStart(2, "0");
+            dataInput.min = `${yyyy}-${mm}-${dd}`;
+
+            // Máscara de telefone
+            telInput.addEventListener("input", function() {
+                let v = this.value.replace(/\D/g, "");
+                if (v.length > 11) v = v.slice(0, 11);
+                if (v.length > 0) v = "(" + v;
+                if (v.length > 3) v = v.slice(0, 3) + ") " + v.slice(3);
+                if (v.length > 10) v = v.slice(0, 10) + "-" + v.slice(10);
+                else if (v.length > 6) v = v.slice(0, 9) + "-" + v.slice(9);
+                this.value = v;
+            });
+
+            // Simula envio (offline)
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                form.reset();
+                form.style.display = "none";
+                msgSucesso.style.display = "block";
+                msgSucesso.scrollIntoView({ behavior: "smooth" });
+            });
         });

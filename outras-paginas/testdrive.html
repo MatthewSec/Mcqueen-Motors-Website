@@ -3,69 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agende seu Test Drive | Mcqueen Motors</title>
+    <title>Agendar Test Drive - Mcqueen Motors</title>
+    <link rel="stylesheet" href="../outras-paginas/testdrive.css">
     <link rel="icon" href="../imagens/logo.png" sizes="32x32">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="testdrive.css">
-    <script src="../js/testdrive.js" defer></script>
 </head>
+
 <body>
-    <header class="header">
-        <div class="header-flex">
-            <button class="back-btn" onclick="window.location.href='../home/index.html'">Voltar</button>
-            <div class="nav-brand">
-                <img src="../imagens/logo.png" alt="Logo" class="header-top-logo">
-                <h1>Mcqueen <span class="highlight">Motors</span></h1>
-            </div>
-        </div>
-    </header>
+
+    <button class="btn-voltar" onclick="history.back()">Voltar</button>
 
     <main>
-        <h2 class="page-title">Agende seu Test Drive</h2>
-        <p class="page-desc">Preencha o formulário abaixo para garantir seu horário e venha viver a experiência de dirigir o carro dos seus sonhos na Mcqueen Motors.</p>
+        <section class="testdrive">
+            <div class="container">
+                <h2>Agende seu Test Drive</h2>
+                <p>Escolha o veículo que deseja testar e preencha suas informações para confirmar o agendamento.</p>
 
-        <div class="estoque-btn-container">
-            <button class="estoque-btn" onclick="window.location.href='estoque.html'">Ver Estoque</button>
-        </div>
+                <form id="form-testdrive" class="form-testdrive">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nome">Nome completo</label>
+                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+                        </div>
 
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+                        </div>
 
-        <div class="success-message" id="success-message">
-            Agendamento realizado com sucesso! Em breve entraremos em contato para confirmar.
-        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required>
+                        </div>
 
-        <section class="form-section">
-            <form id="testdrive-form" autocomplete="off" novalidate>
-                <label for="nome">Nome completo *</label>
-                <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+                        <div class="form-group">
+                            <label for="carro">Veículo desejado</label>
+                            <select id="carro" name="carro" required>
+                                <option value="">Selecione um carro</option>
+                                <option value="BMW X6 2023">BMW X6 2023</option>
+                                <option value="Porsche 911 2023">Porsche 911 2023</option>
+                                <option value="Range Rover 2023">Range Rover 2023</option>
+                                <option value="Mercedes-AMG C63">Mercedes-AMG C63</option>
+                            </select>
+                        </div>
 
-                <label for="email">E-mail *</label>
-                <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                        <div class="form-group">
+                            <label for="data">Data desejada</label>
+                            <input type="date" id="data" name="data" required>
+                        </div>
 
-                <label for="telefone">Telefone *</label>
-                <input type="tel" id="telefone" name="telefone" required placeholder="(11) 91234-5678" maxlength="15">
+                        <div class="form-group">
+                            <label for="horario">Horário preferencial</label>
+                            <select id="horario" name="horario" required>
+                                <option value="">Selecione um horário</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                            </select>
+                        </div>
+                    </div>
 
-                <label for="data">Data do Test Drive *</label>
-                <input type="date" id="data" name="data" required min="" >
+                    <div class="form-group full-width">
+                        <label for="mensagem">Mensagem (opcional)</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Alguma observação sobre o test drive?"></textarea>
+                    </div>
 
-                <label for="hora">Horário *</label>
-                <input type="time" id="hora" name="hora" required>
+                    <button type="submit" class="btn-primary">Confirmar Agendamento</button>
+                </form>
 
-                <label for="carro">Carro desejado *</label>
-                <select id="carro" name="carro" required>
-                    <option value="">Selecione o carro</option>
-
-                </select>
-
-                <label>Preferência de contato *</label>
-                <div class="contact-pref">
-                    <label><input type="radio" name="contato" value="WhatsApp" required> WhatsApp</label>
-                    <label><input type="radio" name="contato" value="Ligação"> Ligação</label>
-                    <label><input type="radio" name="contato" value="E-mail"> E-mail</label>
+                <div id="mensagem-sucesso" class="mensagem-sucesso">
+                    <h3>✅ Test Drive Agendado com Sucesso!</h3>
+                    <p>Entraremos em contato para confirmar seu horário.</p>
+                    <button class="btn-secondary" onclick="history.back()">Voltar</button>
                 </div>
-
-                <button type="submit" class="btn-primary">Agendar Test Drive</button>
-            </form>
+            </div>
         </section>
     </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Mcqueen Motors. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>
